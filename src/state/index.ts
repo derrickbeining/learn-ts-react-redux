@@ -1,3 +1,2 @@
-export * from './models'
-export * from './store'
-export * from './store.types'
+export * from './models';
+export * from './store';

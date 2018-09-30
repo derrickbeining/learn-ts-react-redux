@@ -1,20 +1,19 @@
-import * as React from 'react'
-import {connect} from 'react-redux'
+import * as React from 'react';
 
-import {Post} from '../state/posts.model'
+import { Post } from '../state/models';
 
 interface Props {
-  posts: Post[]
+  posts: Post[];
 }
 
-const mapState = ({posts}) => ({
-  posts: posts.list,
-})
-
-const mapDispatch = dispatch => ({
-  ...dispatch.posts,
-})
-
 export function PostsList(props: Props) {
-  return <ul />
+  const {posts} = props;
+
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
+  );
 }

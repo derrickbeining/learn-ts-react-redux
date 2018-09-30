@@ -1,4 +1,4 @@
-import {init, RematchRootState} from '@rematch/core';
+import { init, RematchRootState } from '@rematch/core';
 
 import * as models from './models';
 
@@ -7,14 +7,8 @@ export const store = init({
 });
 
 export const {dispatch, getState} = store;
+
+// ---------------- TYPES
 export type Store = typeof store;
 export type Dispatch = typeof store.dispatch;
 export type State = RematchRootState<typeof models>;
-/*
-
-
-
-
- */
-dispatch.posts.set({list: []});
-dispatch.api.getAllPosts();

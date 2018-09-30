@@ -1,8 +1,8 @@
-import * as R from 'ramda'
-import {createModel} from '@rematch/core'
-import {AxiosPromise} from 'axios'
+import * as R from 'ramda';
+import { createModel, RematchDispatch } from '@rematch/core';
+// import { AxiosPromise } from 'axios';
 
-import {PostsState, Post} from './posts.types'
+import { PostsState, Post } from './posts.types';
 
 export const posts = createModel({
   state: {
@@ -11,21 +11,22 @@ export const posts = createModel({
   } as PostsState,
 
   reducers: {
-    set(state: PostsState, payload: Partial<PostsState>): PostsState {
+    set(state: PostsState, payload: Post[]): PostsState {
       return R.applyTo(payload)(
         R.applySpec({
           byId: R.indexBy(R.prop('id')),
           list: payload,
         })
-      )
+      );
     },
   },
 
-  effects(dispatch) {
+  // tslint:disable-next-line:no-any
+  effects(dispatch: RematchDispatch<any>) {
     return {
       getAll() {
-        return dispatch.api.getAllPosts()
+        return dispatch.api.getAllPosts();
       },
-    }
+    };
   },
-})
+});
