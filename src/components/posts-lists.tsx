@@ -1,19 +1,10 @@
-import * as React from 'react';
-
-import { Post } from '../state/models';
+// import * as React from 'react';
 
 interface Props {
-  posts: Post[];
+  posts: [];
 }
 
 export function PostsList(props: Props) {
-  const {posts} = props;
 
-  return (
-    <ul>
-      {posts.map((post) => (
-        <li>{post.title}</li>
-      ))}
-    </ul>
-  );
+  return;
 }

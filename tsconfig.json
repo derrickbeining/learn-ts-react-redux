@@ -7,7 +7,7 @@
     "lib": ["es6", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmitOnError": true,
+    "noEmitOnError": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -15,6 +15,7 @@
     "outDir": "build/dist",
     "rootDir": "src",
     "sourceMap": true,
+    "strict": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5"
