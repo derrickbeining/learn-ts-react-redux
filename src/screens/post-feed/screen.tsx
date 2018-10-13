@@ -88,7 +88,7 @@ class Component extends React.Component<Props, State> {
           </div>
 
           {posts.map(post => (
-            <div style={styles.feedRow}>
+            <div key={post.id} style={styles.feedRow}>
               <Card interactive={true} elevation={Elevation.TWO}>
                 <H5>
                   <a href="#">{post.title}</a>
